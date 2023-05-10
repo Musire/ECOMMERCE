@@ -1,4 +1,4 @@
-import { Navbar, Cart, Controller, Display, Slider} from './'
+import { Navbar, Display, Slider} from './'
 
 const ProductPage = () => {
     return ( 

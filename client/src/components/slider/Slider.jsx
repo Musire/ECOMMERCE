@@ -9,7 +9,7 @@ const Slider = ({max}) => {
     const isMax = counter === max - 1
 
     return ( 
-        <section className="relative section-container min-h-[54vh] xs:h-128  md:h-[30rem] centered-col flex-col gap-y-8 xs:mt-24 md:mt-0">
+        <section className="relative section-container min-h-[54vh] xs:h-128  md:h-[30rem] centered-col flex-col gap-y-8 xs:mt-24 md:mt-0 z-10">
             <div id="slide-container" className="relative overflow-hidden bg-white block-container xs:w-full xs:h-full md:w-full md:rounded-xl">
                 <Slide slide={0} current={counter}/>
                 <Slide slide={1} current={counter}/>

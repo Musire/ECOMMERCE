@@ -8,6 +8,7 @@ export default {
     extend: {
       screens: {
         'xs': '319px',
+        'md': '784px',
         'mobile': '375px',
         'desktop': '1440px'
       },
@@ -58,6 +59,7 @@ export default {
       backgroundImage: {
         'icon-close': "url('./assets/icon-close.svg')",
         'icon-menu': "url('./assets/icon-menu.svg')",
+        'thumbnail-1': "url('./assets/images/thumbnail images/thumbnail-1.jpg')"
       },
     },
   },
