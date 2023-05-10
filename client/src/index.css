@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brightred: #F25F3A;
+  --darkred: #242D52;
+  --grayblue: #9095A7;
+  --darkblue: #1D1E25;
+  --royalblue: #242d52;
+  --normalgray: #a9aaaf;
+  --palered: #ffc4b8;
+  --lightgray: #FAFAFA;
+  --silver: #d9d9d9;
+  --mid: #979797;
+  --smoke: #848884;
+  --dark: #444444;
+  --darker: #0A0708;
+  --deep: #030303;
+  --deeper: #000300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    background-color: var(--deep);
+    color: var(--silver);
+    overflow-x: hidden;
+    font-family: 'Kumbh Sans', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: .75em;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--palered);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brightred);
+    transition-duration: 2s;
+  }
+}
+
+@layer components {
+  /*Flex Box Preset*/
+  .centered {
+      @apply flex flex-row justify-center items-center
+  }
+
+  .centered-col {
+      @apply flex flex-col justify-center items-center
+  }
+
+  .spaced {
+      @apply flex flex-row justify-between items-center
+  }
+
+  .spaced-col {
+      @apply flex flex-col justify-between items-center
+  }
+
+  .evenly {
+      @apply flex flex-row justify-evenly items-center
+  }
+
+  .evenly-col {
+    @apply flex flex-col justify-evenly items-center
+  }
+
+  .invisilink {
+      @apply relative collapse
+  }
+
+  /*Containers*/
+
+  .section-container {
+      @apply w-full min-h-[68vh] h-auto centered
+  }
+
+  .block-container {
+    @apply xs:w-5/6 lg:w-4/5 min-h-full h-auto
+  }
+
+  .portion-container {
+    @apply min-h-[20vh] xs:min-h-[20vh] lg:h-[30vh] w-screen h-auto centered
+  }
+
+  .content-container {
+    @apply h-[calc(100vh-4rem)] md:h-[calc(100vh-6rem)] centered-col md:centered w-full bg-white mt-16 md:mt-24
+  }
+
+  /*Transitions*/
+
+  .easy-transition {
+    @apply duration-300 ease-in-out hover:cursor-pointer
+  }
+
+  .slow-transition {
+    @apply duration-700 ease-in-out hover:cursor-pointer
+  }
+
+  .slugish-transition {
+    @apply duration-1000 ease-in-out hover:cursor-pointer
+  }
+
+  .bg-img {
+    @apply bg-center bg-no-repeat
+  }
+
+  /*Navbar Section*/
+  .navbar-link {
+    @apply font-semibold text-mid/80 capitalize
+  }
+
+  .sidebar-link {
+    @apply font-extrabold text-black/70 text-2xl capitalize
+  }
+
+  /*Slider Section*/
+  .slider-img {
+    @apply absolute xs:-top-10 md:top-0 left-0 xs:h-[120%] md:h-[100%] w-full
+  }
+
+  .controller-btn {
+    @apply absolute z-30 rounded-full bg-white w-[50px] h-[50px] centered top-[40%]
+  }
+
+
+}
