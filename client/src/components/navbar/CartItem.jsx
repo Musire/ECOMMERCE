@@ -1,9 +1,12 @@
 import DeleteIcon from "../../assets/images/icon-delete.svg";
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 
-
-const CartItem = ({ icon, title, price, quantity }) => {
+const CartItem = ({ id, icon, title, price, quantity }) => {
     const total = (Number(price) * quantity).toFixed(2)
+    const { removeItem } = useContext(CartContext)
+
     return (
         <div className="grid grid-cols-6 w-full gap-x-3 ">
             <img src={icon} alt="thumbnail-img" className="w-20 h-16 rounded-lg"/>
@@ -12,7 +15,7 @@ const CartItem = ({ icon, title, price, quantity }) => {
                 <h4 className="row-start-2 w-full">{`$${price} x ${quantity}`}</h4>
                 <h4 className="row-start-2 text-black/75 font-bold">{`$${total}`}</h4>
             </article>
-            <button className="centered">
+            <button className="centered" onClick={() => removeItem("FLES1")} >
                 <img src={DeleteIcon} alt="" className="w-5 h-5" />
             </button>
         </div>        

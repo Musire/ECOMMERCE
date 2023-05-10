@@ -11,7 +11,7 @@ const initialState = {
     total: ""
 }
 
-export const CardContext =  createContext();
+export const CartContext =  createContext();
 
 export const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(CartReducer, [])
@@ -26,6 +26,6 @@ export const CartProvider = ({children}) => {
 
     const cardContext = { state, addItem, removeItem }
     
-    return <CardContext.Provider value={cardContext}>{children}</CardContext.Provider>
+    return <CartContext.Provider value={cardContext}>{children}</CartContext.Provider>
 }
  

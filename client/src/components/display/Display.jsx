@@ -3,10 +3,24 @@ import cart from "../../assets/images/white-cart.svg"
 import plus from "../../assets/images/icon-plus.svg"
 import minus from "../../assets/images/icon-minus.svg"
 import useCounter from "../../hooks/useCounter"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
+import thumbnail from "../../assets/images/thumbnail images/thumbnail-1.jpg"
 
 const Display = () => {
     const { counter, increase, decrease } = useCounter(999)
     const isZero = counter === 0
+
+    const { addItem } = useContext(CartContext)
+
+    const newItem = {
+        id: "FLES1",
+        icon: thumbnail,
+        title: "Fall Limited Edition Sneakers",
+        price: "125.00", 
+        quantity: counter
+     }
+
     return ( 
         <section className="pt-10 pb-20 bg-white section-container">
             <div className="block-container gap-y-8 centered-col">
@@ -33,7 +47,7 @@ const Display = () => {
                                 <img src={plus} alt="" className="w-4" />
                             </button>
                         </div>
-                        <button className="xs:w-full md:w-3/5 gap-8 xs:py-6 md:py-3 text-white shadow-2xl centered bg-orange rounded-xl shadow-orange/50">
+                        <button className="xs:w-full md:w-3/5 gap-8 xs:py-6 md:py-3 text-white shadow-2xl centered bg-orange rounded-xl shadow-orange/50 disabled:cursor-not-allowed" onClick={() => addItem(newItem)} disabled={isZero}>
                             <img src={cart} alt="" className="" />
                             <p className="text-lg font-semibold">{Text.button}</p>
                         </button>

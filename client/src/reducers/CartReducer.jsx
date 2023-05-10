@@ -14,7 +14,7 @@ export const CartReducer = (state, action) => {
         }
         case 'REMOVE_ITEM' : {
             const newState = state.filter(obj => obj.id !== action.payload)
-            return 
+            return newState
         }
     }
 

@@ -1,14 +1,27 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import cart from "../../assets/images/icon-cart.svg"
-import thumbnail from "../../assets/images/thumbnail images/thumbnail-1.jpg"
 import { CartItem } from "./";
+import { CartContext } from "../../context/CartContext"
 
 const Cart = () => {
+    const { state } = useContext(CartContext)
+    const isEmpty = state.length === 0
     const [cartOpen, setCartOpen] = useState(false)
 
     const toggleCart = () => {
         setCartOpen(!cartOpen)
     }
+
+    const cartItems = state.map((item, index) => 
+    <CartItem 
+        key={index} 
+        id={item.id} 
+        icon={item.icon} 
+        title={item.title} 
+        price={item.price} 
+        quantity={item.quantity} 
+    />)
+
     return ( 
         <>
             <button className="" onClick={toggleCart}>
@@ -16,13 +29,9 @@ const Cart = () => {
             </button>
             {cartOpen && <aside className="absolute z-40 bg-white top-24 left-4 w-[28.5rem] rounded-xl h-80 shadow-2xl">
                 <div className="w-full p-8 text-xl font-extrabold border-b-2 h-1/4 border-silver/50 text-black/75">Cart</div>
-                <div className="w-full text-xl font-extrabold h-3/4 centered text-dark/50 p-4">
-                    <CartItem 
-                        icon={thumbnail} 
-                        title="Fall Limited Edition Sneakers" 
-                        price="125.00" 
-                        quantity={3}
-                     />
+                <div className="w-full text-xl font-extrabold h-3/4 centered-col gap-y-4 text-dark/50 p-4">
+                    {isEmpty && <p>Your cart is empty.</p>}
+                    {!isEmpty && cartItems}
                 </div>
             </aside>}
         </>
