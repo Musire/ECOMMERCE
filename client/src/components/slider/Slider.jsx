@@ -1,7 +1,8 @@
 import prev from "../../assets/images/button-prev.svg"
 import next from "../../assets/images/button-next.svg"
-import { Slide, Thumbnail } from "./"
+import { Slide, Thumbnail, ThumbHolder } from "./"
 import useCounter from "../../hooks/useCounter"
+import { ThumbProvider } from "../../context/ThumbContext"
 
 const Slider = ({max}) => {
     const { counter, increase, decrease } = useCounter(3)
@@ -16,12 +17,14 @@ const Slider = ({max}) => {
                 <Slide slide={2} current={counter}/>
                 <Slide slide={3} current={counter}/>
             </div>
-            <div id="thumbnail-container" className="xs:hidden md:flex spaced md:gap-x-3 lg:gap-x-6 h-auto w-full">
-                <Thumbnail thumbnail={0}/>
-                <Thumbnail thumbnail={1}/>
-                <Thumbnail thumbnail={2}/>
-                <Thumbnail thumbnail={3}/>
-            </div>
+            <ThumbProvider>
+                <ThumbHolder >
+                    <Thumbnail thumbnail={0}/>
+                    <Thumbnail thumbnail={1}/>
+                    <Thumbnail thumbnail={2}/>
+                    <Thumbnail thumbnail={3}/>
+                </ThumbHolder>
+            </ThumbProvider>
             <button className="controller-btn left-4 disabled:cursor-not-allowed md:hidden" disabled={isZero} onClick={decrease}>
                 <img src={prev} alt="" className="w-4 h-4" />
             </button>
