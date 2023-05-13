@@ -124,11 +124,11 @@ html {
 
   /*Navbar Section*/
   .navbar-link {
-    @apply font-semibold text-mid/80 capitalize
+    @apply font-semibold text-mid/80 capitalize easy-transition hover:text-darkgrayblue hover:cursor-pointer
   }
 
   .sidebar-link {
-    @apply font-extrabold text-black/70 text-2xl capitalize
+    @apply font-extrabold text-black/70 text-2xl capitalize easy-transition hover:text-darkgrayblue hover:cursor-pointer
   }
 
   /*Slider Section*/

@@ -15,6 +15,7 @@ export default {
       colors: {
         orange: 'hsl(26, 100%, 55%)',
         paleorange: 'hsl(25, 100%, 94%)',
+        lightorange: 'hsl(26, 100%, 75%)',
         darkblue: 'hsl(220, 13%, 13%)',
         darkgrayblue: 'hsl(219, 9%, 45%)',
         grayblue: 'hsl(220, 14%, 75%)',

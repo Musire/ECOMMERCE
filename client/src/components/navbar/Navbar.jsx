@@ -20,7 +20,7 @@ const Navbar = () => {
                     </div>
                     <div id="icon-wrapper" className="spaced xs:gap-x-2 sm:gap-x-6">
                         <Cart />
-                        <img src={avatar} alt="" className="xs:w-7 xs:h-7 md:w-10 md:h-10" />
+                        <img src={avatar} alt="" className="xs:w-7 xs:h-7 md:w-10 md:h-10 hover:ring-orange hover:ring-2 rounded-full easy-transition hover:cursor-pointer" />
                     </div>
                 </div>
             </nav>
