@@ -3,13 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --brightred: #F25F3A;
-  --darkred: #242D52;
-  --grayblue: #9095A7;
-  --darkblue: #1D1E25;
-  --royalblue: #242d52;
-  --normalgray: #a9aaaf;
-  --palered: #ffc4b8;
+  --orange: hsl(26, 100%, 55%);
+  --paleorange: hsl(26, 100%, 75%);
   --lightgray: #FAFAFA;
   --silver: #d9d9d9;
   --mid: #979797;
@@ -37,16 +32,17 @@ html {
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--dark);
+    background: var(--smoke);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--palered);
+    background: var(--orange);
     border-radius: 10px;
+    transition-duration: 2s;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--brightred);
+    background: var(--paleorange);
     transition-duration: 2s;
   }
 }
@@ -117,6 +113,15 @@ html {
     @apply bg-center bg-no-repeat
   }
 
+  /*Product Page*/
+  .app-container {
+    @apply relative w-screen h-auto min-h-screen bg-white centered
+  }
+
+  .content-container {
+    @apply xs:centered-col md:flex-row md:mt-24 block-container lg:w-[70%] md:py-14
+  }
+
   /*Navbar Section*/
   .navbar-link {
     @apply font-semibold text-mid/80 capitalize
@@ -127,12 +132,20 @@ html {
   }
 
   /*Slider Section*/
+  .slider-section {
+    @apply relative section-container min-h-[54vh] xs:h-96 sm:h-128  md:h-[30rem] centered-col flex-col gap-y-8 xs:mt-24 md:mt-0 z-10
+  }
+
+  .slide-container {
+    @apply relative overflow-hidden bg-white block-container xs:w-full xs:h-full md:w-full md:rounded-xl
+  }
+
   .slider-img {
     @apply absolute xs:-top-10 md:top-0 left-0 xs:h-[120%] md:h-[100%] w-full
   }
 
   .controller-btn {
-    @apply absolute z-30 rounded-full bg-white w-[50px] h-[50px] centered top-[40%]
+    @apply absolute z-30 rounded-full bg-white w-[50px] h-[50px] centered top-[40%] disabled:cursor-not-allowed md:hidden
   }
 
 

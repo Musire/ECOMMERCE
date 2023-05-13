@@ -1,11 +1,14 @@
+import { ThumbProvider } from '../context/ThumbContext';
 import { Navbar, Display, Slider} from './'
 
 const ProductPage = () => {
     return ( 
-        <section id='app-container' className='relative w-screen h-auto min-h-screen bg-white centered'>
+        <section id='app-container' className='app-container'>
             <Navbar />
-            <div className="xs:centered-col md:flex-row md:mt-24 block-container lg:w-[70%] md:py-14">
-                <Slider max={4}/>
+            <div className="content-container">
+                <ThumbProvider>
+                    <Slider max={4}/>
+                </ThumbProvider>
                 <Display />
             </div>
         </section>

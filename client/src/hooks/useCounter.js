@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const useCounter = ({ max=999 }) => {
+const useCounter = () => {
     const [counter, setCounter] = useState(0)
     
     const increase = () => {

@@ -10,7 +10,15 @@ export const ThumbProvider = ({children}) => {
         setSelected(newState)
     }
 
-    const thumbContext = { selected, changeSelected }
+    const increase = () => {
+        setSelected(prev => prev + 1)
+    }
+
+    const decrease = () => {
+        setSelected(prev => prev - 1)
+    }
+
+    const thumbContext = { selected, changeSelected, increase, decrease }
 
     return <ThumbContext.Provider value={thumbContext}>{children}</ThumbContext.Provider>
 }

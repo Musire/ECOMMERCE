@@ -17,8 +17,10 @@ const Thumbnail = ({ thumbnail }) => {
     const isActive = selected === thumbnail
 
     return (
-        <button className={`w-[20%] rounded-xl ${isActive ? 'ring-2 ring-orange' : ''}`} onClick={() => changeSelected(thumbnail)}>
-            <img src={thumbnails[thumbnail]} alt="thumbnail-img" className={`w-full rounded-xl hover:opacity-[50%] easy-transition ${isActive ? ' opacity-50' : ''}`} />
+        <button className={`w-[20%] md:20 lg:h-24 rounded-xl relative ${isActive ? 'ring-2 ring-orange' : ''}`} onClick={() => changeSelected(thumbnail)}>
+            <div className="w-full h-full bg-white centered rounded-xl">
+                <img src={thumbnails[thumbnail]} alt="thumbnail-img" className={`bg-white w-full h-full rounded-xl hover:opacity-[50%] hover:brightness-125 easy-transition z-20 ${isActive ? ' opacity-40 brightness-125' : ''}`} />
+            </div>
         </button>
      );
 }

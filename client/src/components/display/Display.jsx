@@ -48,7 +48,7 @@ const Display = () => {
                                 <img src={plus} alt="" className="w-4" />
                             </button>
                         </div>
-                        <button className="xs:w-full md:w-3/5 gap-8 xs:py-6 md:py-3 text-white shadow-2xl centered bg-orange rounded-xl shadow-orange/50 disabled:cursor-not-allowed" onClick={() => addItem(newItem)} disabled={isZero || !cartEmpty }>
+                        <button className="xs:w-full md:w-3/5 xs:gap-x-8 md:gap-x-4 lg:gap-x-6 xs:py-6 md:py-3 text-white shadow-2xl centered bg-orange rounded-xl shadow-orange/50 disabled:cursor-not-allowed" onClick={() => addItem(newItem)} disabled={isZero || !cartEmpty }>
                             <img src={cart} alt="" className="" />
                             <p className="text-lg font-semibold">{Text.button}</p>
                         </button>
